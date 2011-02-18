@@ -306,7 +306,9 @@ NSInteger intSort(id info1, id info2, void *context) {
 	
 	//NSLog(@"%@ NO: %@", NSStringFromSelector(_cmd), NSStringFromCGRect(info.frame));
 	
-	return NO;
+    // HUGE HACK: this bounds detection code sometimes causes empty cells (as seen in StackOverflow); this shortcircuits it
+    // HUGE HACK: this only works, I guess, because in my specific use case, I have a rather small table
+	return YES;
 }
 
 
